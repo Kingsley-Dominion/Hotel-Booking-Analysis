@@ -141,7 +141,7 @@ Install R from the official R Project website.
 Open the R script:
 Hotel Booking Analysis (1).R
 3. Add the Dataset
-Place hotel_bookings.csv in the project’s data/ directory.
+Place hotel_bookings.csv in the project's data/ directory.
 For a shareable project, update the current absolute file path:
 hotel <- read.csv("C:/Users/HomePC/Documents/Projects/R/hotel_bookings.csv")
 to a relative path such as:
@@ -172,14 +172,14 @@ There are a few items to review before using the script as a fully reproducible 
 The dataset is currently referenced using a Windows-specific absolute path. A relative path is recommended.
 2.	Correlation matrix
 The final corrplot() call uses cor_matrix, but the script shown does not explicitly create cor_matrix. The correlation matrix should be created from numeric_vars before calling corrplot().
- 	For example:
- 	cor_matrix <- cor(numeric_vars, use = "complete.obs")
+For example:
+cor_matrix <- cor(numeric_vars, use = "complete.obs")
 3.	Season variable
 arrival_date_month is converted to numeric earlier in the script, while the later Season calculation compares it with month-name strings. This means that section should be revised if the seasonal variable is intended to be populated correctly.
 4.	Revenue interpretation
 The script calculates:
- 	revenue = adr * total_nights
- 	This should be treated as an analytical revenue proxy rather than necessarily the hotel’s recorded realized revenue.
+5.	revenue = adr * total_nights
+This should be treated as an analytical revenue proxy rather than necessarily the hotel's recorded realized revenue.
 Potential Business Questions
 This project can be used to investigate questions such as:
 •	When are hotel bookings highest?
@@ -203,3 +203,4 @@ Potential extensions to the project include:
 Conclusion
 This project provides an exploratory framework for analyzing hotel booking data in R. It combines data preparation, KPI calculation, segmentation, exploratory analysis, correlation analysis, and visualization to examine booking behavior, cancellations, pricing, customer types, and stay characteristics.
 The analysis can serve as a foundation for more advanced hotel revenue management, customer segmentation, cancellation prediction, and business intelligence work.
+
